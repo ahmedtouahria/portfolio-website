@@ -1,0 +1,240 @@
+{% extends 'portfolio/ui/parts/base.html' %}
+{% block head %}
+{% endblock %}
+{% block content %}
+<!-- Homepage -->
+<section id="home" class="header-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-section-wrap">
+                    <div class="header-view-on-mobile">
+                        <h1>{{config.name}}</h1>
+                        <h6>{{config.job_title}}</h6>
+                    </div>
+                    <div class="transform-banner position-relative">
+                        <img class="img header-img header-img-left wow imago" src="/media/{{config.hero_image}}" alt="">
+                    </div>
+                    <div class="header-cont header-cont-right">
+                        <div class="header-cont-absolute header-cont-absolute-right">
+                            <div class="header-not-view-on-mobile">
+                                <h1 class="wow" data-splitting>{{config.name}}</h1>
+                                <h6 class="wow" data-splitting>{{config.job_title}}</h6>
+                            </div>
+                            <div class="header-cont-text">
+                                <p class="wow" data-splitting>{{config.hero_message}}</p>
+                            </div>
+                            {% if config.cta %}
+                            <div class="btn-wrap text-center">
+                              <!-- usefull for CTA campaigns, for example get free PDF, you just have to send an email bla bla -->
+                                <div class="btn-link"> <a href="index.html#">Download CV <i class="ti-download"></i></a> <span class="btn-block color1 animation-bounce"></span> </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% if services %}
+<!-- Services -->
+<section id="services" class="services clear section-padding">
+    <div class="container">
+        <div class="row mb-45">
+            <div class="col-md-4">
+                <h6 class="wow" data-splitting>
+                  {% if config.team_Portfolio == True %}
+                  SERVICES THAT WE PROVIDE
+                  {% else %}
+                  SERVICES THAT I PROVIDE
+                  {% endif %}
+                </h6>
+                <h1 class="wow" data-splitting>Services</h1>
+            </div>
+            <div class="col-md-7 offset-md-1 mt-45">
+                <p class="wow fadeInUp" data-wow-delay=".6s">
+                  {% if config.team_Portfolio == True %}
+                      We offer a wide range of services to help businesses achieve their goals. Our team provides solutions tailored to your specific needs.
+                  {% else %}
+                      As a professional, I offer a variety of services to help clients achieve their objectives. I provide high-quality solutions to meet your requirements.
+                  {% endif %}
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="owl-carousel owl-theme">
+
+                  {% for service in services %}
+                    <div class="item">
+                      <a href="/service/{{service.slug}}">
+                      <img src="{{service.icon.url}}" alt="service" style="margin: auto">
+                            <h5>{{service.name}}</h5>
+                            <p>{{service.short_description}}</p>
+                            <div class="numb">{{ forloop.counter }}</div>
+                      </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% if skills %}
+<!-- About & Skills -->
+<section id="about" class="section-padding">
+    <div class="container">
+        <div class="row mb-45">
+            <div class="col-md-7">
+                <h6 class="wow" data-splitting>
+                  {% if team_Portfolio == True %}
+                      EXPERTISE AND SKILLS
+                  {% else %}
+                      MY EXPERTISE AND SKILLS
+                  {% endif %}
+                </h6>
+                <h1 class="wow" data-splitting>
+                  Skills
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <p class="wow fadeInUp" data-wow-delay=".2s">
+                  {% if team_Portfolio == True %}
+                      Our team possesses a diverse set of skills and expertise, equipping us to handle a wide range of projects and deliver exceptional results.
+                  {% else %}
+                      As a skilled professional, I have expertise in various areas, enabling me to tackle diverse projects and deliver outstanding outcomes.
+                  {% endif %}
+                </p>
+                {% if config.contact_info %}
+                <div class="btn-wrap text-left mt-45 wow fadeInUp" data-wow-delay=".6s">
+                    <div class="btn-link"> <a href="mailto:{{config.mail}}">{{config.mail}}</a> <span class="btn-block color1 animation-bounce"></span> </div>
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-md-6 offset-md-1 wow fadeInUp" data-wow-delay=".8s">
+              {% for skill in skills %}
+                <p class="bar-title">{{skill.name}}<span class="percent align-right">{{skill.percent}}%</span></p>
+                <div class="bar">
+                    <div class="bar-fill bar-fill-design start" {% if skill.color %} style="background: {{skill.color}}" {% endif %} ></div>
+                </div>
+              {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% if projects %}
+<!-- Portfolio -->
+<section id="portfolio" class="portfolio section-padding">
+    <div class="container">
+        <div class="row mb-45">
+            <div class="col-md-4">
+                <h6 class="wow" data-splitting>
+                  {% if config.team_Portfolio == True %}
+                      CHECK OUT OUR PROJECTS
+                  {% else %}
+                      CHECK OUT MY PROJECTS
+                  {% endif %}
+                </h6>
+                <h1 class="wow" data-splitting>Portfolio</h1>
+            </div>
+            <div class="col-md-7 offset-md-1 mt-45">
+                <p class="wow fadeInUp" data-wow-delay=".6s">
+                  {% if config.team_Portfolio == True %}
+                      Explore our diverse portfolio of projects, showcasing our expertise and commitment to delivering high-quality solutions to our clients.
+                  {% else %}
+                      Welcome to my portfolio! Here you can explore a collection of my projects that highlight my skills and experience, representing my dedication to delivering exceptional results.
+                  {% endif %}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="full-width">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="owl-carousel owl-theme">
+                  {% for project in projects %}
+                    <div class="item">
+                        <a href="/project/{{project.slug}}">
+                            <div class="img-block">
+                                <div class="wrapper-img"> <img src="{{project.image.url}}" class="img-fluid"> </div>
+                                <div class="title-block">
+                                    <h4>{{project.name}}</h4>
+                                    <p>{{project.category}}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% if blog %}
+<!-- Homepage Blog -->
+<section id="blog" class="homepage-blog section-padding">
+    <div class="container">
+        <div class="row mb-45">
+            <div class="col-md-12">
+                <h6 class="wow" data-splitting>Recent Articles</h6>
+                <h1 class="wow" data-splitting>Latest News</h1>
+            </div>
+        </div>
+        <div class="row mb-30">
+    <div class="col-md-6">
+      <div class="img left">
+        <a href="post.html"><img src="/static/ui/images/blog/1.jpg" alt=""></a>
+      </div>
+    </div>
+    <div class="col-md-6 valign">
+      <div class="content">
+        <div class="date">
+          <h1>24</h1>
+          <h6>June 2023</h6>
+        </div>
+        <div class="cont">
+          <h5>Get Started With Tiktok Ads.</h5>
+          <p>Phasellus et lacus suscipit congue nis in the miss mine one miss the drana risus in tincidunt ornare.</p>
+          <div class="btn-wrap">
+                                <div class="btn-link"> <a href="post.html">Read more <i class="ti-arrow-right"></i></a> <span class="btn-block color1 animation-bounce"></span> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+       <div class="row mb-30">
+    <div class="col-md-6 order2 valign">
+      <div class="content">
+        <div class="date">
+          <h1>27</h1>
+          <h6>June 2023</h6>
+        </div>
+        <div class="cont">
+          <h5>UX in Ecommerce – 5 things to avoid.</h5>
+          <p>Phasellus et lacus suscipit congue nis in the miss mine one miss the drana risus in tincidunt ornare.</p>
+          <div class="btn-wrap">
+                            <div class="btn-link"> <a href="post.html">Read more <i class="ti-arrow-right"></i></a> <span class="btn-block color1 animation-bounce"></span> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 order1">
+      <div class="img left">
+        <a href="post.html"><img src="/static/ui/images/blog/5.jpg" alt=""></a>
+      </div>
+    </div>
+  </div>
+    </div>
+</section>
+{% endif %}
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

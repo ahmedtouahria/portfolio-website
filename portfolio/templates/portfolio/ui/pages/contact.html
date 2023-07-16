@@ -1,0 +1,55 @@
+{% extends 'portfolio/ui/parts/base.html' %}
+{% block head %}
+{% endblock %}
+{% block content %}
+<section class="contact section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-45">
+                  <div class="row mb-45">
+                      <div class="col-md-12">
+                          <h6 class="wow animated words chars splitting" data-splitting="" style="visibility: visible; --word-total: 3; --char-total: 10;"><span class="word" data-word="Get" style="--word-index: 0;"><span class="char" data-char="G" style="--char-index: 0;">G</span><span class="char" data-char="e" style="--char-index: 1;">e</span><span class="char" data-char="t" style="--char-index: 2;">t</span></span><span class="whitespace"> </span><span class="word" data-word="in" style="--word-index: 1;"><span class="char" data-char="i" style="--char-index: 3;">i</span><span class="char" data-char="n" style="--char-index: 4;">n</span></span><span class="whitespace"> </span><span class="word" data-word="touch" style="--word-index: 2;"><span class="char" data-char="t" style="--char-index: 5;">t</span><span class="char" data-char="o" style="--char-index: 6;">o</span><span class="char" data-char="u" style="--char-index: 7;">u</span><span class="char" data-char="c" style="--char-index: 8;">c</span><span class="char" data-char="h" style="--char-index: 9;">h</span></span></h6>
+                          <h1 class="wow animated words chars splitting" data-splitting="" style="visibility: visible; --word-total: 2; --char-total: 14;"><span class="word" data-word="Contact" style="--word-index: 0;"><span class="char" data-char="C" style="--char-index: 0;">C</span><span class="char" data-char="o" style="--char-index: 1;">o</span><span class="char" data-char="n" style="--char-index: 2;">n</span><span class="char" data-char="t" style="--char-index: 3;">t</span><span class="char" data-char="a" style="--char-index: 4;">a</span><span class="char" data-char="c" style="--char-index: 5;">c</span><span class="char" data-char="t" style="--char-index: 6;">t</span></span><span class="whitespace"> </span><span class="word" data-word="Details" style="--word-index: 1;"><span class="char" data-char="D" style="--char-index: 7;">D</span><span class="char" data-char="e" style="--char-index: 8;">e</span><span class="char" data-char="t" style="--char-index: 9;">t</span><span class="char" data-char="a" style="--char-index: 10;">a</span><span class="char" data-char="i" style="--char-index: 11;">i</span><span class="char" data-char="l" style="--char-index: 12;">l</span><span class="char" data-char="s" style="--char-index: 13;">s</span></span></h1>
+                      </div>
+                  </div>
+                  {% if config.phone %}
+                    <div class="item">
+                        <div class="wrap-block"> <span class="icon et-phone"></span>
+                            <div class="text-block">
+                                <h5>Phone</h5>
+                                <p>{{config.phone}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if config.Adresse %}
+                    <div class="item">
+                        <div class="wrap-block"> <span class="icon et-map-pin"></span>
+                            <div class="text-block">
+                                <h5>Address</h5>
+                                <p>{{config.Adresse}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if config.mail %}
+                    <div class="item">
+                        <div class="wrap-block"> <span class="icon et-notebook"></span>
+                            <div class="text-block">
+                                <h5>E-Mail</h5>
+                                <p>{{config.mail}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    {{config.contact_iframe | safe}}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+{% endblock %}

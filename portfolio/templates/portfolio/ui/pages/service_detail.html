@@ -1,0 +1,86 @@
+{% extends 'portfolio/ui/parts/base.html' %}
+{% block head %}
+{% endblock %}
+{% block content %}
+<!-- Services Page  -->
+<section class="section-padding services-page">
+    <div class="container">
+        <div class="row mb-45">
+            <div class="col-md-12 text-center">
+                <h6 class="wow" data-splitting>Services</h6>
+                <h1 class="wow" data-splitting>{{service.name}}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+              {% if service.video %}
+              <div class="", style="width: 100%; display: block; margin: auto">
+                <iframe height="500" width="100%" src="{{service.video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              {% else %}
+              <img src="{{service.image.url}}" class="mb-45 img-fluid" alt="">
+              {% endif %}
+                <div class="row mt-45">
+                  {{service.content}}
+                </div>
+
+                {% if questions %}
+                <div class="row mt-45">
+                    <div class="col-md-12 mb-30">
+                        <h5>Frequently Asked Questions</h5>
+                    </div>
+                    <div class="col-md-12">
+                        <ul class="accordion-box clearfix">
+                          {% for question in questions %}
+                            <li class="accordion block">
+                                <div class="acc-btn"><span class="count">1.</span>{{question.question}}</div>
+                                <div class="acc-content">
+                                    <div class="content">
+                                        <div class="text">{{question.response}}</div>
+                                    </div>
+                                </div>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if other_services %}
+<!-- Other Services -->
+<section class="services clear section-padding">
+    <div class="container">
+        <div class="row mb-45">
+            <div class="col-md-12">
+                <h6 class="wow" data-splitting>Services That I Provide</h6>
+                <h1 class="wow" data-splitting>Other Services</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="owl-carousel owl-theme">
+                  {% for other_service in other_services %}
+                    <div class="item">
+                            <img src="{{other_service.icon.url}}" alt="service" style="margin: auto">
+                            <h5>{{other_service.name}}</h5>
+                            <p>{{other_service.short_description}}</p>
+                            <div class="numb">{{ forloop.counter }}</div>
+                    </div>
+                  {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endif %}
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

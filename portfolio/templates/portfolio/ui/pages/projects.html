@@ -1,0 +1,58 @@
+{% extends 'portfolio/ui/parts/base.html' %}
+{% block head %}
+{% endblock %}
+{% block content %}
+
+
+<section class="portfolio section-padding">
+        <div class="container">
+            <div class="row mb-45">
+                <div class="col-md-4">
+                    <h6 class="wow words chars splitting animated" data-splitting="" style="--word-total: 2; --char-total: 8; visibility: visible;">
+                      {% if config.team_Portfolio == True %}
+                          CHECK OUT OUR PROJECTS
+                      {% else %}
+                          CHECK OUT MY PROJECTS
+                      {% endif %}
+                    </h6>
+                    <h1 class="wow words chars splitting animated" data-splitting="" style="--word-total: 1; --char-total: 9; visibility: visible;">
+                      Portfolio
+                    </h1>
+                </div>
+                <div class="col-md-7 offset-md-1 mt-45">
+                    <p class="wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                      {% if config.team_Portfolio == True %}
+                          Explore our diverse portfolio of projects, showcasing our expertise and commitment to delivering high-quality solutions to our clients.
+                      {% else %}
+                          Welcome to my portfolio! Here you can explore a collection of my projects that highlight my skills and experience, representing my dedication to delivering exceptional results.
+                      {% endif %}
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+
+              {% for project in projects %}
+                <div class="col-md-4">
+                    <div class="item mb-30">
+                        <a href="/project/{{project.slug}}">
+                            <div class="img-block">
+                                <div class="wrapper-img"> <img src="{{project.image.url}}" class="img-fluid"> </div>
+                                <div class="title-block">
+                                    <h4>{{project.name}}</h4>
+                                    <p>{{project.category}}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              {% endfor %}
+
+
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+{% endblock %}
