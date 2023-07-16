@@ -21,7 +21,7 @@
               <img src="{{service.image.url}}" class="mb-45 img-fluid" alt="">
               {% endif %}
                 <div class="row mt-45">
-                  {{service.content}}
+                  {{service.content | safe}}
                 </div>
 
                 {% if questions %}

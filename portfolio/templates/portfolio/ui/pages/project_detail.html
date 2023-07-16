@@ -48,7 +48,7 @@
                     {% endif %}
                     {% endif %}
 
-                    <p class="mt-45 wow fadeInUp" data-wow-delay=".1s">{{project.content}}</p>
+                    <p class="mt-45 wow fadeInUp" data-wow-delay=".1s">{{project.content | safe}}</p>
                     {% if project.date %}
                     <p class="mt-45 wow fadeInUp" data-wow-delay=".2s"><span>Date : </span>{{project.date}}</p>
                     {% endif %}
