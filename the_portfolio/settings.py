@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'portfolio',
     'constance',
     'constance.backends.database',
-    "autoslug"
+    "autoslug",
+    "ckeditor"
 ]
 
 MIDDLEWARE = [
