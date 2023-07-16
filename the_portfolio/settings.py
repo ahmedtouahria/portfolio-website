@@ -157,7 +157,7 @@ CONSTANCE_CONFIG = {
     'hero_image': ('', "Hero Image", 'image_field'),
     'footer_image': ('', "Footer Image", 'image_field'),
     'team_Portfolio': (False, "Is this a team portfolio ?"),
-    'contact_info': (False, "Show contact info ?"),
+    'contact_info': (True, "Show contact info ?"),
     'contact_iframe': ("""<iframe src="" width="640" height="583" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>""", "Show contact info ?"),
 }
 

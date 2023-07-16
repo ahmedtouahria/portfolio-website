@@ -1,5 +1,6 @@
 from django.db import models
 from autoslug import AutoSlugField
+from ckeditor.fields import RichTextField
 
 class Certification(models.Model):
     name = models.CharField(max_length=255)
@@ -10,7 +11,7 @@ class Certification(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=255)
     category = models.CharField(max_length=255)
-    content = models.TextField()
+    content = RichTextField()
     video = models.URLField(null=True, blank=True)
     image = models.ImageField(upload_to='project_principal_images/')
     date = models.DateTimeField(null=True, blank=True)
@@ -43,7 +44,7 @@ class Skill(models.Model):
 class Service(models.Model):
     name = models.CharField(max_length=255)
     short_description = models.TextField()
-    content = models.TextField()
+    content = RichTextField()
     icon = models.ImageField(upload_to='service_icons/')
     image = models.ImageField(upload_to='service_images/')
     video = models.URLField(null=True, blank=True)
