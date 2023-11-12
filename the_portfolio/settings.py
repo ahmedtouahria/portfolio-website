@@ -157,3 +157,10 @@ CONSTANCE_CONFIG_FIELDSETS = {
 # Media
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/')
 MEDIA_URL = '/media/'
+STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "the_portfolio/static"),
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
