@@ -120,7 +120,7 @@
               {% for skill in skills %}
                 <p class="bar-title">{{skill.name}}<span class="percent align-right">{{skill.percent}}%</span></p>
                 <div class="bar">
-                    <div class="bar-fill bar-fill-design start" {% if skill.color %} style="background: {{skill.color}}" {% endif %} ></div>
+                    <div class="bar-fill bar-fill-design start" {% if skill.color %} style="background: {{skill.color}};width:{{skill.percent}}%" {% endif %} ></div>
                 </div>
               {% endfor %}
             </div>
