@@ -2922,7 +2922,7 @@ color: #18191d;
         display: block;
     }
     .header-img {
-        width: 60%;
+        width: 50%;
         margin-top: 40px;
     }
     .header-img-left {
@@ -2992,7 +2992,7 @@ color: #18191d;
 }
 @media (min-width: 1270px) {
     .header-img {
-        width: 57%;
+        width: 40%;
     }
     .header-img-left {
         margin-left: 0%;

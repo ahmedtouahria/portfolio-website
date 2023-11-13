@@ -123,6 +123,8 @@ CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
 
 CONSTANCE_ADDITIONAL_FIELDS = {
     'image_field': ['django.forms.ImageField', {}],
+    'file_field': ['django.forms.FileField', {}],
+
     'api_field': ['django.forms.JSONField', {
     }],
     'email_field': ['django.forms.EmailField', {}],
@@ -130,6 +132,8 @@ CONSTANCE_ADDITIONAL_FIELDS = {
 
 CONSTANCE_CONFIG = {
     'name': ('Creative', 'Nom de votre entreprise'),
+    'CV': ('', 'Your CV',"file_field"),
+
     'job_title': ('Scrum Master & Backend developer', 'Nom de votre emploie'),
     'hero_message': ('Hi, I’m Nilsa Brown and I am creative web & app developer who dream making the world better place by creating captivating products.', 'Hero message' ),
     'description': ('Description', "pas la peine d'expliquer"),
@@ -153,7 +157,7 @@ CONSTANCE_CONFIG = {
 }
 
 CONSTANCE_CONFIG_FIELDSETS = {
-    'Informations génerales': ('team_Portfolio', 'contact_info', 'hero_image', 'name','hero_message', 'footer_image', 'job_title', 'description', 'logo', 'about_image', 'theme_color', 'mail', 'Adresse', 'phone', 'brand_url', 'meta_description', 'fav_icon'),
+    'Informations génerales': ('team_Portfolio', "CV",'contact_info', 'hero_image', 'name','hero_message', 'footer_image', 'job_title', 'description', 'logo', 'about_image', 'theme_color', 'mail', 'Adresse', 'phone', 'brand_url', 'meta_description', 'fav_icon'),
     'Dashboard informations': ('contact_iframe', 'Google_analytics_tag', 'Google_analytics_id', 'Google_analytics_credentials'),
 }
 

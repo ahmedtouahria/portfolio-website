@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="{% static 'ui/css/bootstrap.min.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'ui/css/plugins.css' %}" type="text/css" />
-    <link rel="stylesheet" href="{% static 'ui/css/style.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'ui/css/style.min.css' %}" type="text/css" />
 </head>
 <body>
     <!-- Preloader -->
@@ -52,9 +52,15 @@
         <div class="container">
             <div class="row align-items-center">
                 <!-- Logo -->
-
                 <div class="col-8 col-md-8">
                     <div class="logo-wrap">
+                        {% if config.team_Portfolio == False %}
+                        <a href="/">
+                            <div class="logo">
+                              <h5>{{config.name}}</h5>
+                            </div>
+                        </a>
+                        {% else %}
                       {% if config.logo %}
                         <a href="/">
                             <div class="logo">
@@ -62,6 +68,8 @@
                             </div>
                         </a>
                       {% endif %}
+                      {% endif %}
+
                     </div>
                 </div>
 
