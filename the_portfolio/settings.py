@@ -14,6 +14,10 @@ DEBUG = config("DEBUG",True)
 ALLOWED_HOSTS = config("ALLOWED_HOSTS",cast=Csv())
 
 
+CSRF_TRUSTED_ORIGINS = [f"http://{host}" for host in ALLOWED_HOSTS] + [f"https://{host}" for host in ALLOWED_HOSTS]
+
+FILE_UPLOAD_MAX_MEMORY_SIZE = 25 * 1024 * 1024  # 25 MB in bytes
+
 # Application definition
 
 INSTALLED_APPS = [
