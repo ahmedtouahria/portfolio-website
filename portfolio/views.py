@@ -6,6 +6,8 @@ from django.http import Http404
 def index(request):
     settings = config
     services = Service.objects.all()
+    certs = Certification.objects.all()
+
     projects = Project.objects.all()
     social_media = SocialMedia.objects.all()
     skills = Skill.objects.all()
@@ -17,7 +19,8 @@ def index(request):
     "social_media": social_media,
     "config": settings,
     "skills": skills,
-    "testimonials": testimonials
+    "testimonials": testimonials,
+    "certefications":certs
     }
     return render(request, "portfolio/ui/pages/index.html", context)
 

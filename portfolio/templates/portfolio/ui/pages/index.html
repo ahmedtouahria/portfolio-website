@@ -177,6 +177,54 @@
     </div>
 </section>
 {% endif %}
+{% if certefications %}
+<!-- Portfolio -->
+<section id="certefications" class="portfolio section-padding">
+    <div class="container">
+        <div class="row mb-45">
+            <div class="col-md-4">
+                <h6 class="wow" data-splitting>
+                  {% if config.team_Portfolio == True %}
+                      CHECK OUT OUR PROJECTS
+                  {% else %}
+                      CHECK OUT MY Certefications
+                  {% endif %}
+                </h6>
+                <h1 class="wow" data-splitting>Certefications</h1>
+            </div>
+            <div class="col-md-7 offset-md-1 mt-45">
+                <p class="wow fadeInUp" data-wow-delay=".6s">
+                  {% if config.team_Portfolio == True %}
+                  I hold certifications tailored for hackathons, highlighting expertise in coding, problem-solving, and project management. Committed to delivering innovative solutions, I excel in dynamic and competitive event environments
+                  {% else %}
+                  I hold certifications tailored for hackathons, highlighting expertise in coding, problem-solving, and project management. Committed to delivering innovative solutions, I excel in dynamic and competitive event environments                  {% endif %}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="full-width">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="owl-carousel owl-theme">
+                  {% for cert in certefications %}
+                    <div class="item">
+                        <a href="/certification_images/{{cert.slug}}">
+                            <div class="img-block">
+                                <div class="wrapper-img"> <img src="{{cert.image.url}}" class="img-fluid"> </div>
+                                <div class="title-block">
+                                    <h4>{{cert.name}}</h4>
+                                    <p>{{cert.institution}}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
 {% if blog %}
 <!-- Homepage Blog -->
 <section id="blog" class="homepage-blog section-padding">
