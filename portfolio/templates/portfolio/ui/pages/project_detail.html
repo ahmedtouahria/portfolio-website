@@ -59,7 +59,7 @@
                     <p class="wow fadeInUp" data-wow-delay=".3s"><span>Technologies : </span>{{project.technologies}}</p>
                     {% endif %}
                     {% if project.live %}
-                    <a href="project.live"><p class="wow fadeInUp" data-wow-delay=".3s"><span>Live link : </span>{{project.live}}</p></a>
+                    <a href="project.live"><p class="wow fadeInUp" data-wow-delay=".3s"><span>Live link : </span><a href="{{project.live}}" target="_blank">{{project.live}}</a></p></a>
                     {% endif %}
                 </div>
 

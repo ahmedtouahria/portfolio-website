@@ -10,7 +10,7 @@ class ProjectImageAdmin(admin.TabularInline):
     model = ProjectImage
 
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('created_at', 'name', 'content', 'technologies', 'image')
+    list_display = ('created_at', 'name', 'technologies', 'image')
     date_hierarchy = 'created_at'
     ordering = ['-created_at']
     inlines = [
