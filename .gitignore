@@ -5,3 +5,4 @@ env
 credential.json
 db.sqlite3
 .env
+media

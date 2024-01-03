@@ -12,6 +12,28 @@
     <link rel="stylesheet" href="{% static 'ui/css/bootstrap.min.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'ui/css/plugins.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'ui/css/style.min.css' %}" type="text/css" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{{config.description}}">
+    <meta name="keywords" content="{{config.name}}, portfolio, development, software engineering">
+    <meta name="author" content="Your Name">
+
+    <!-- Open Graph Meta Tags (for social media sharing) -->
+    <meta property="og:title" content="{{config.name}}">
+    <meta property="og:description" content="{{config.description}}">
+    <meta property="og:url" content="{{config.brand_url}}">
+    <meta property="og:image" content="/media/{{config.hero_image}}">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Meta Tags (for Twitter sharing) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{config.name}}">
+    <meta name="twitter:description" content="{{config.description}}">
+    <meta name="twitter:image" content="/media/{{config.hero_image}}">
+
+    <!-- Canonical Link -->
+    <link rel="canonical" href="{{config.brand_url}}">
+
 </head>
 <body>
     <!-- Preloader -->
