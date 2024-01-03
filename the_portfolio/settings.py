@@ -172,3 +172,41 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+if DEBUG is False:
+# Security settings
+    print('debug is not enabled')
+    # Enable the browser's XSS protection
+    SECURE_BROWSER_XSS_FILTER = True
+
+    # Prevent embedding your site within an iframe to avoid clickjacking attacks
+    X_FRAME_OPTIONS = 'DENY'
+
+    # Redirect all non-HTTPS requests to HTTPS
+    SECURE_SSL_REDIRECT = True
+
+    # Ensure that the session cookie is only sent over HTTPS connections
+    SESSION_COOKIE_SECURE = True
+
+    # Ensure that the CSRF cookie is only sent over HTTPS connections
+    CSRF_COOKIE_SECURE = True
+
+    # Prevent browsers from interpreting files as a different MIME type
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+
+    # Enable HTTP Strict Transport Security (HSTS)
+    SECURE_HSTS_SECONDS = 31536000  # 1 year
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+
+    # Control information leakage in the Referer header
+    SECURE_REFERRER_POLICY = 'same-origin'
+
+    # Use this setting if your Django app is behind a proxy or load balancer
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+    # Use a secure session engine to store session data
+    SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+
+    # Set a reasonable session cookie age to minimize the risk of session hijacking
+    SESSION_COOKIE_AGE = 1209600  # 2 weeks in seconds
