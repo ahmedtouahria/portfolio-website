@@ -7,6 +7,9 @@ class Certification(models.Model):
     institution = models.CharField(max_length=255)
     image = models.ImageField(upload_to='certification_images/')
     created_at = models.DateTimeField(auto_now=True)
+    slug = AutoSlugField(populate_from=('name'),blank=True, null=True)
+    content = RichTextField(blank=True, null=True)
+    date = models.DateTimeField(null=True, blank=True)
 
 class Project(models.Model):
     name = models.CharField(max_length=255)

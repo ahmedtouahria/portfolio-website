@@ -43,12 +43,18 @@ def certefications(request):
     }
     return render(request, "portfolio/ui/pages/certefications.html", context)
 
-def certefication_details(request):
-    certs = Certification.objects.all()
-    page_name = "Projects"
+def certefication_details(request,CertSlug):
+    certefication = Certification.objects.get(slug=CertSlug)
+    page_name = f"Certification {certefication.name}"
+    next_certefication = Certification.objects.all().order_by('-created_at').first()
+    previous_certefication= Certification.objects.all().order_by('created_at').first()
     context = {
     "page_name": page_name,
-    "certefications":certs,
+    "certefication":certefication,
+    "next_certefication":next_certefication,
+    "previous_certefication":previous_certefication,
+
+
     }
     return render(request, "portfolio/ui/pages/certefication.html", context)
 
