@@ -3,6 +3,8 @@ media/*
 venv
 env
 credential.json
-db.sqlite3
 .env
 media
+db.sqlite3
+db.*
+db

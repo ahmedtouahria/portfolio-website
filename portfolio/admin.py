@@ -38,10 +38,11 @@ class ServiceAdmin(admin.ModelAdmin):
         FAQAdmin,
     ]
 
+
 admin.site.register(Certification, CertificationAdmin)
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Testimonial, TestimonialAdmin)
 admin.site.register(Skill, SkillAdmin)
 admin.site.register(Service, ServiceAdmin)
-
+admin.site.register(SocialMedia)
 # Register your models here.

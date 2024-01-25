@@ -62,3 +62,5 @@ class FAQ(models.Model):
 class SocialMedia(models.Model):
     themify_icon = models.CharField(max_length=255)
     link = models.URLField(max_length=255)
+    def __str__(self) -> str:
+        return f"{self.link}"
