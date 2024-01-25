@@ -9,5 +9,7 @@ urlpatterns = [
     path('service/<slug:ServiceSlug>', service_detail, name="Service Detail"),
     path('project/<slug:ProjectSlug>', project_detail, name="Project Detail"),
     path('certefications/<slug:CertSlug>', certefication_details, name="certefication_details"),
+    path('certefications/', certefications, name="certefications"),
+
 
 ]

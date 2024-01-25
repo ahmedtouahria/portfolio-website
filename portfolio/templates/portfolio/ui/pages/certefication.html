@@ -61,7 +61,7 @@
 
                 <div class="col-md-5 rest" style="margin: auto">
                     <div class="nxt">
-                      <a href="/certefication/{{next_certefication.slug}}">
+                      <a href="{% url 'certefication_details' certefication.slug %}">
                         <div class="img bg-img" data-background="{{next_certefication.image.url}}">
                             <div class="text-right ontop">
                                 <h5>{{next_certefication.name}}</h5> <span class="sub-title mb-0 mt-10">Next certefication</span>
