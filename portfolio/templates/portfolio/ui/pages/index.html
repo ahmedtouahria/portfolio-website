@@ -192,6 +192,7 @@
                 </h6>
                 <h1 class="wow" data-splitting>Certefications</h1>
             </div>
+            <br>
             <div class="col-md-7 offset-md-1 mt-45">
                 <p class="wow fadeInUp" data-wow-delay=".6s">
                   {% if config.team_Portfolio == True %}
@@ -210,7 +211,7 @@
                     <div class="item">
                         <a href="{% url 'certefication_details' cert.slug %}">
                             <div class="img-block">
-                                <div class="wrapper-img"> <img src="{{cert.image.url}}" class="img-fluid"> </div>
+                                <div class="wrapper-img"> <img src="{{cert.image.url}}" style="height: 500px;" class="img-fluid"> </div>
                                 <div class="title-block">
                                     <h4>{{cert.name}}</h4>
                                     <p>{{cert.institution}}</p>
