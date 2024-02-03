@@ -161,7 +161,7 @@ CONSTANCE_CONFIG = {
 
 CONSTANCE_CONFIG_FIELDSETS = {
     'Informations génerales': ('team_Portfolio', "CV",'contact_info', 'hero_image', 'name','hero_message', 'footer_image', 'job_title', 'description', 'logo', 'about_image', 'theme_color', 'mail', 'Adresse', 'phone', 'brand_url', 'meta_description', 'fav_icon'),
-    'Dashboard informations': ('contact_iframe', 'Google_analytics_tag', 'Google_analytics_id', 'Google_analytics_credentials'),
+    'Dashboard informations': ('contact_iframe', 'GOOGLE_TAG_MANAGER', 'Google_analytics_id', 'Google_analytics_credentials'),
 }
 
 
