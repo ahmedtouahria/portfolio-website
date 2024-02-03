@@ -149,7 +149,7 @@ CONSTANCE_CONFIG = {
     'phone': ('+213770000000', 'votre N° de téléphone pro'),
     'Adresse': ('Algeria', "pas la peine d'expliquer aussi"),
     'Google_analytics_id': ('12345678', "l'identifiant de la vue analytics"),
-    'Google_analytics_tag': ('UA-xxxxxxxx-1', "Tag de la balise"),
+    'GOOGLE_TAG_MANAGER': ('', "Tag de la balise"),
     'Google_analytics_credentials': ('{json}', "Votre clés d'API", 'api_field'),
     'fav_icon': ('', "L'icone du site web", 'image_field'),
     'hero_image': ('', "Hero Image", 'image_field'),

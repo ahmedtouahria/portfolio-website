@@ -30,7 +30,7 @@
     <meta name="twitter:title" content="{{config.name}}">
     <meta name="twitter:description" content="{{config.meta_description}}">
     <meta name="twitter:image" content="/media/{{config.hero_image}}">
-
+    {{config.GOOGLE_TAG_MANAGER | safe}}
     <!-- Canonical Link -->
     <link rel="canonical" href="{{config.brand_url}}">
 <style>
