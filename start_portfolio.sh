@@ -1,6 +1,6 @@
 #!/bin/bash
-APP_DIR="/path/to/your/django/project"
-VENV_DIR="$APP_DIR/venv"
+APP_DIR="/home/ubuntu/portfolio-website"
+VENV_DIR="$APP_DIR/env"
 PORT=8009
 
 echo "🔍 Checking for processes on port $PORT..."
