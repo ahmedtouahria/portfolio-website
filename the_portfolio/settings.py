@@ -11,7 +11,7 @@ SECRET_KEY =config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False if config("DEBUG",False) == "False" else True
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS",cast=Csv())
+ALLOWED_HOSTS = config("ALLOWED_HOSTS","*",cast=Csv())
 
 
 CSRF_TRUSTED_ORIGINS = [f"http://{host}" for host in ALLOWED_HOSTS] + [f"https://{host}" for host in ALLOWED_HOSTS]
@@ -135,34 +135,37 @@ CONSTANCE_ADDITIONAL_FIELDS = {
 
 CONSTANCE_CONFIG = {
     'name': ('Creative', 'Nom de votre entreprise'),
-    'CV': ('', 'Your CV',"file_field"),
+    'CV': ('default.pdf', 'Your CV',"file_field"),
 
     'job_title': ('Scrum Master & Backend developer', 'Nom de votre emploie'),
     'hero_message': ('Hi, I’m Nilsa Brown and I am creative web & app developer who dream making the world better place by creating captivating products.', 'Hero message' ),
     'description': ('Description', "pas la peine d'expliquer"),
-    'meta_description': ('', "Description pour les moteurs de recherches"),
-    'logo': ("", "Le logo de l'entreprise", 'image_field'),
+    'meta_description': ('Creative portfolio showcasing innovative web development projects and solutions', "Description pour les moteurs de recherches"),
+    'logo': ("default-logo.png", "Le logo de l'entreprise", 'image_field'),
     'theme_color': ('#8dc04d', "couleur du theme"),
     'brand_url': ('https://www.creators.cc', "URL du site"),
-    'about_image': ("", "L'image de la page à propos", 'image_field'),
+    'about_image': ("default-about.jpg", "L'image de la page à propos", 'image_field'),
     'mail': ('creative@creative.com', 'votre mail pro'),
     'phone': ('+213770000000', 'votre N° de téléphone pro'),
     'Adresse': ('Algeria', "pas la peine d'expliquer aussi"),
     'Google_analytics_id': ('12345678', "l'identifiant de la vue analytics"),
-    'GOOGLE_TAG_MANAGER': ('', "Tag de la balise"),
+    'GOOGLE_TAG_MANAGER': ('GTM-XXXXXXX', "Tag de la balise"),
     'Google_analytics_credentials': ('{json}', "Votre clés d'API", 'api_field'),
-    'fav_icon': ('', "L'icone du site web", 'image_field'),
-    'hero_image': ('', "Hero Image", 'image_field'),
-    'footer_image': ('', "Footer Image", 'image_field'),
+    'fav_icon': ('favicon.ico', "L'icone du site web", 'image_field'),
+    'hero_image': ('hero-bg.jpg', "Hero Image", 'image_field'),
+    'footer_image': ('footer-bg.jpg', "Footer Image", 'image_field'),
     'team_Portfolio': (False, "Is this a team portfolio ?"),
     'contact_info': (True, "Show contact info ?"),
-    'contact_iframe': ("""<iframe src="" width="640" height="583" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>""", "Show contact info ?"),
+    'contact_iframe': ("""<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33!2d-74.30!3d40.697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1" width="640" height="583" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>""", "Show contact info ?"),
 }
 
 CONSTANCE_CONFIG_FIELDSETS = {
     'Informations génerales': ('team_Portfolio', "CV",'contact_info', 'hero_image', 'name','hero_message', 'footer_image', 'job_title', 'description', 'logo', 'about_image', 'theme_color', 'mail', 'Adresse', 'phone', 'brand_url', 'meta_description', 'fav_icon'),
     'Dashboard informations': ('contact_iframe', 'GOOGLE_TAG_MANAGER', 'Google_analytics_id', 'Google_analytics_credentials'),
 }
+
+# Make all Constance fields optional (not required)
+CONSTANCE_CONFIG_REQUIRED = {}
 
 
 # Media
